@@ -17,6 +17,7 @@ public class CustomerController {
 	//add an initbinder to convert trim input strings
 	//remove leading and trailing whitespace
 	//resolve issue for validation
+	
 	@InitBinder
 	public void initBinder(WebDataBinder dataBinder) {
 		StringTrimmerEditor stringTrimmerEditor = new StringTrimmerEditor(true);
@@ -26,10 +27,10 @@ public class CustomerController {
 	@RequestMapping("/showForm")
 	public String showForm(Model theModel) {
 		
-		//create customer obj
+		//create customer object
 		Customer theCustomer = new Customer();
 		
-		//add customer obj to the model
+		//add customer object to the model
 		theModel.addAttribute("customer", theCustomer);
 		
 		return "customer-form";
@@ -39,13 +40,16 @@ public class CustomerController {
 	public String processForm(
 			@Valid @ModelAttribute("customer") Customer theCustomer,
 			BindingResult theBindingResult) {
+		
+		System.out.println("Binding result:" + theBindingResult);
+		
 		if(theBindingResult.hasErrors()) {
 			return "customer-form";
 		}
 		else {
 		//log the input data
-		System.out.println("theCustomer: " + theCustomer.getFirstName()
-							+ " " + theCustomer.getLastName());
+		/*System.out.println("theCustomer: " + theCustomer.getFirstName()
+							 + " " + theCustomer.getLastName()); */
 		return "customer-confirmation";
 		}
 	}

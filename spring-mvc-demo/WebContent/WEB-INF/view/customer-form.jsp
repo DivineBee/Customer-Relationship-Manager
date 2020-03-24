@@ -13,18 +13,30 @@
 	
 	First name*: <form:input path="firstName" />
 	<form:errors path="firstName" cssClass="error"/>
+	
 	<br><br>
 	Last name*: <form:input path="lastName" />
 	<form:errors path="lastName" cssClass="error"/>
+	
+	<br><br>
+	Free passes: <form:input path="freePasses"/>
+	<form:errors path="freePasses" cssClass="error"/>
+	
+	<br><br>
+	ID: <form:input path="ID"/>
+	<form:errors path="ID" cssClass="error"/>
+	
 	<br><br>
 	Country:
 	<form:select path="country">
 		<form:options items="${customer.countryOptions}"/>
 	</form:select>
+	
 	<br><br>
 	Job position:
 	<form:radiobuttons path="jobPosition" 
 	 items="${customer.jobOptions}"/>
+	 
 	<br><br>
 	Operating Systems:
 	Linux <form:checkbox path="operatingSystems" value="Linux"/>

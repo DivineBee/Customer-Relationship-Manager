@@ -9,6 +9,10 @@
 
 The customer is confirmed: ${customer.firstName} ${customer.lastName}
 <br><br>
+Free passes: ${customer.freePasses}
+<br><br>
+ID: ${customer.ID}
+<br><br>
 Country: ${customer.country}
 <br><br>
 Job position: ${customer.jobPosition}
